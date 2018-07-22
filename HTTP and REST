@@ -1,0 +1,79 @@
+HEADERS
+
+HTTP headers allow the client and the server to pass additional information with the request or the response. An HTTP header consists of its case-insensitive name followed by a colon ':', then by its value (without line breaks). Leading white space before the value is ignored.
+
+HTTP headers can be mainly classified into two types: HTTP Request Header Whenever you type a URL into the address bar and try to access it, your browser sends an HTTP request to the server. The HTTP request header contains information in a text-record form, which includes particulars such as the type, capabilities and version of the browser that generates the request, the operating system used by the client, the page that was requested, the various types of outputs accepted by the browser, and so on. HTTP Response Header Upon receiving the request header, the Web server will send an HTTP response header back to the client. An HTTP response header includes information in a text-record form that a Web server transmits back to the client's browser. The response header contains particulars such as the type, date and size of the file sent back by the server, as well as information regarding the server.
+
+Headers can be grouped according to their contexts:
+
+General header: Headers applying to both requests and responses but with no relation to the data eventually transmitted in the body.
+
+Request header: Headers containing more information about the resource to be fetched or about the client itself.
+
+Response header: Headers with additional information about the response, like its location or about the server itself (name and version etc.).
+
+Entity header: Headers containing more information about the body of the entity, like its content length or its MIME-type.
+
+
+STATUS CODE
+HTTP status codes are standard response codes given by web site servers on the internet. The codes help identify the cause of the problem when a web page or other resource does not load properly.
+The term HTTP status code is actually the common term for the HTTP status line that includes both the HTTP status code and the HTTP reason phrase.
+HTTP status codes are sometimes called browser error codes or internet error codes.
+For example, the HTTP status line 500: Internal Server Error is made up of the HTTP status code of 500 and the HTTP reason phrase of Internal Server Error.
+
+Information responses - 100 Continue
+This interim response indicates that everything so far is OK and that the client should continue with the request or ignore it if it is already finished.
+
+Successful responses - 200 OK
+The request has succeeded. The meaning of a success varies depending on the HTTP method:
+GET: The resource has been fetched and is transmitted in the message body.
+HEAD: The entity headers are in the message body.
+PUT or POST: The resource describing the result of the action is transmitted in the message body.
+TRACE: The message body contains the request message as received by the server
+
+Redirection messages - 301 Moved Permanently
+This response code means that the URI of the requested resource has been changed. Probably, the new URI would be given in the response.
+
+Client error responses - 404 Not Found
+The server can not find requested resource. In the browser, this means the URL is not recognized. In an API, this can also mean that the endpoint is valid but the resource itself does not exist. Servers may also send this response instead of 403 to hide the existence of a resource from an unauthorized client. This response code is probably the most famous one due to its frequent occurence on the web.
+
+Server error responses - 500 Internal Server Error
+The server has encountered a situation it doesn't know how to handle.
+
+
+COOKIES
+An HTTP cookie (web cookie, browser cookie) is a small piece of data that a server sends to the user's web browser. The browser may store it and send it back with the next request to the same server. Typically, it's used to tell if two requests came from the same browser — keeping a user logged-in, for example. It remembers stateful information for the stateless HTTP protocol.
+
+Cookies are mainly used for three purposes:
+Session management
+Logins, shopping carts, game scores, or anything else the server should remember
+Personalization
+User preferences, themes, and other settings
+Tracking
+Recording and analyzing user behavior
+Cookies were once used for general client-side storage. While this was legitimate when they were the only way to store data on the client, it is recommended nowadays to prefer modern storage APIs. Cookies are sent with every request, so they can worsen performance (especially for mobile data connections).
+
+
+REST
+REST (REpresentational State Transfer) is an architectural style for developing web services. REST is popular due to its simplicity and the fact that it builds upon existing systems and features of the internet's HTTP in order to achieve its objectives, as opposed to creating new standards, frameworks and technologies.
+HTTP is an application protocol. REST is a set of rules, that when followed, enable you to build a distributed application that has a specific set of desirable constraints.
+
+REST enforces the use of the available HTTP commands as they were meant to be used.
+For example, I could do:
+
+GET
+http://example.com?method=delete&item=xxx
+But with rest I would use the "DELETE" request method, removing the need for the "method" query param
+
+DELETE
+http://example.com?item=xxx
+
+REST is not necessarily tied to HTTP. RESTful web services are just web services that follow a RESTful architecture.
+
+What is Rest -
+1- Client-server
+2- Stateless
+3- Cacheable
+4- Layered system
+5- Code on demand
+6- Uniform interface
